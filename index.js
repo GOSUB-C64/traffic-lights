@@ -16,7 +16,28 @@ let trafficLight = ['red', 'amber', 'green']
 let currentLight = 0
 
 function changeLight() {
-    document.getElementById(trafficLight[currentLight]).style.backgroundColor = '#fff'
-    currentLight = (currentLight + 1) % trafficLight.length
-    document.getElementById(trafficLight[currentLight]).style.backgroundColor = '#000'
+	setTimeout(function () {
+		redLight[0].style.backgroundColor = '#f00'
+		amberLight[0].style.backgroundColor = '#888'
+		greenLight[0].style.backgroundColor = '#888'
+	}, 1000)
+
+	setTimeout(function () {
+		amberLight[0].style.backgroundColor = '#ffa500'
+	}, 2000)
+
+	setTimeout(function () {
+		redLight[0].style.backgroundColor = '#888'
+		amberLight[0].style.backgroundColor = '#888'
+		greenLight[0].style.backgroundColor = '#0f0'
+	}, 3000)
+
+	setTimeout(function () {
+		redLight[0].style.backgroundColor = '#888'
+		amberLight[0].style.backgroundColor = '#888'
+		greenLight[0].style.backgroundColor = '#888'
+	}, 8000)
+
+	setTimeout(changeLight, 5000) // Change light every 5 seconds
 }
+changeLight()
